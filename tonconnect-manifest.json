@@ -1,5 +1,8 @@
 {
   "url": "https://giveawayfrontend.vercel.app/",
   "name": "TonPlatformTemp",
-  "allowed_origins": ["https://giveawayfrontend.vercel.app/"]
+  "allowed_origins": ["https://giveawayfrontend.vercel.app/"],
+  "name" : "Lucky-Draw",
+  "description": "An dApp for connecting to TON wallets",
+  "icon" : "https://example.com"
 }
