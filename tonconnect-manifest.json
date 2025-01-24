@@ -4,5 +4,5 @@
   "allowed_origins": ["https://giveawayfrontend.vercel.app/"],
   "name" : "Lucky-Draw",
   "description": "An dApp for connecting to TON wallets",
-  "icon" : "https://example.com"
+  "icon" : "https://shreyshah173.github.io/TonPlatformTemp/icon.png"
 }
